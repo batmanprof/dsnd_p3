@@ -25,6 +25,7 @@ nltk.download('wordnet')
 app = Flask(__name__)
 
 def tokenize(text):
+    """Preparing textual data"""
     text = re.sub(r"[^a-zA-Z0-9]", " ", text.lower())    
     tokens = word_tokenize(text)
     # Removing stop words
@@ -157,6 +158,7 @@ def go():
 
 
 def main():
+    """Main function"""
     app.run(host='0.0.0.0', port=3001, debug=True)
 
 

@@ -21,6 +21,7 @@ nltk.download('stopwords')
 nltk.download('wordnet')
 
 def load_data(database_filepath):
+    """Loading data"""
     # load data from database
     if database_filepath[:10] != 'sqlite:///':
         database_filepath = 'sqlite:///'+database_filepath    
@@ -33,6 +34,12 @@ def load_data(database_filepath):
 
 
 def tokenize(text):
+    """Preparing the textual data 
+    * lower casing
+    * tokenizing
+    * deleting stop words
+    * lemmatizing
+    """
     # Normalize text
     text = re.sub(r"[^a-zA-Z0-9]", " ", text.lower())    
     # Tokenizing text
@@ -45,6 +52,7 @@ def tokenize(text):
     return words
 
 def build_model():
+    """Building model and setting parameters"""
     pipeline = Pipeline([
         ('vect', CountVectorizer(tokenizer=tokenize)),
         ('tfidf', TfidfTransformer()),    
@@ -56,15 +64,18 @@ def build_model():
 
 
 def evaluate_model(model, X_test, Y_test, category_names):
+    """Evaluating a trained model"""
     Y_pred = model.predict(X_test)
     for i in range(36):
         print(category_names[i], ':\n', classification_report(Y_test[i], Y_pred[i]))
 
 
 def save_model(model, model_filepath):    
+    """Saving model"""
     joblib.dump(model, model_filepath, compress = 1)
 
 def main():
+    """Main function"""
     if len(sys.argv) == 3:
         database_filepath, model_filepath = sys.argv[1:]
         print('Loading data...\n    DATABASE: {}'.format(database_filepath))
