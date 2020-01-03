@@ -25,7 +25,7 @@ Main points:
 
 ## File Structure 
 
-'''
+```
 - app
 | - template
 | |- master.html  # main page of web app
@@ -47,4 +47,4 @@ Main points:
 |- ML Pipeline Preparation.ipynb Preparation notebook for train_classifier.py
 
 - README.md (You are reading this now.)
-'''
+```
