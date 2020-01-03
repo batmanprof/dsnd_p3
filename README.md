@@ -2,7 +2,7 @@
 
 ## Summary
 This project is made for the Data Scientist Nano Degree. The puprose of this project is
-classifying message and find those which indicate that some help needed.
+classifying messages and find those which indicate that some help needed.
 Main points:
 * Preprocess the provided 
 * Create and train a model on the provided data
@@ -25,24 +25,24 @@ Main points:
 
 ## File Structure 
 
-- app
-| - template
-| |- master.html  # main page of web app
-| |- go.html  # classification result page of web app
-|- run.py  # Flask file that runs app
+ - app
+ | - template
+ | |- master.html  # main page of web app
+ | |- go.html  # classification result page of web app
+ |- run.py  # Flask file that runs app
 
-- data
-|- disaster_categories.csv  # data to process 
-|- disaster_messages.csv  # data to process
-|- process_data.py
-|- InsertDatabaseName.db   # database to save clean data to
+ - data
+ |- disaster_categories.csv  # data to process 
+ |- disaster_messages.csv  # data to process
+ |- process_data.py
+ |- InsertDatabaseName.db   # database to save clean data to
 
-- models
-|- train_classifier.py
-|- classifier.pkl  # saved model 
+ - models
+ |- train_classifier.py
+ |- classifier.pkl  # saved model 
 
-- notebooks
-|- ETL Pipeline Preparation.ipynb Preparation notebook for process_data.py
-|- ML Pipeline Preparation.ipynb Preparation notebook for train_classifier.py
+ - notebooks
+ |- ETL Pipeline Preparation.ipynb Preparation notebook for process_data.py
+ |- ML Pipeline Preparation.ipynb Preparation notebook for train_classifier.py
 
-- README.md (You are reading this now.)
+ - README.md (You are reading this now.)
